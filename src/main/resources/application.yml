@@ -1,0 +1,25 @@
+micronaut:
+  application:
+    name: keyManagerGrpc
+
+grpc:
+  server:
+    port: ${SERVER_PORT:50051}
+    keep-alive: 1h
+    max-inbound-message-size: 1024
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: 1234
+    schema-generate: update
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+
+itau:
+  contas:
+    url: ${ITAU_URL:`http://localhost:9091`}
+
+bcb:
+  pix:
+    url: ${BCB_URL:`http://localhost:8082`}
